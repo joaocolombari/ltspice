@@ -1,0 +1,186 @@
+Bob Pease(First published in the November 7, 1991 issue)
+
+Here’s another esaeP’s Fable. The class of 1966 was starting to plan its
+25th Reunion. The Reunion Committee went around and contacted all the
+alumni, until they came to Joe. Joe, as duly noted in the Yearbook, was
+the Person Least Likely to Succeed in business. That had been a clear
+choice, back in 1966—everybody recognized that Joe was a klutz, with no
+sense of proportion, no head for math nor business. But Joe had filled
+in his questionnaire: President and CEO of Widget Enterprises—a multi-
+billion dollar multi-national corporation. And Joe had just donated a new
+Library to the Business School. How could this be? So it was with great
+respect and curiosity that the Reunion Committee invited Joe to give the
+key-note address at the Reunion.
+
+It was the same old Joe who stood up to give the speech at the reunion.
+“I never was much of a speech maker. And I don’t have any big secrets
+about how I do business. I just buy widgets for $1.00, and I sell them
+for $10.00. I’m perfectly happy to take just a 10% profit. End of Fable.
+
+When I started work at George A. Philbrick Researches in 1960, I observed
+a secret project going on—a “skunk-works” project to bring out Philbrick’s
+first solid-state operational amplifier. Technicians were testing and
+grading diodes and transistors, night and day, to generate matched pairs.
+The data sheet was being rushed to completion. Test engineers were
+learning how to measure currents in the picoampere range. And Sales hopes
+to sell a few of these P2 amplifiers, at a selling price of $185, to pay
+for all this research effort.
+
+Wow. An op amp with just 100 picoamperes input current—with no tubes, no
+heater power, no mechanical choppers. That must use the finest new silicon
+transistors. No wonder it sells for $185. But when I got to know the
+senior engineer, Bob Malter, a little better, he showed me that there were
+not any silicon transistors in the P2. There were just 7 little germanium
+transistors in there. What? WHAT??
+
+When Bob Malter arrived at Philbrick Researches in Boston in 1957, he was
+already a smart and accomplished engineer. After designing several analog
+computer modules (which were the flagships of the Philbrick product line)
+he became intrigued with the concept of the Varactor amplifier, just about
+the time that George Philbrick, the founder and chief Research Engineer,
+was getting frustrated.
+
+George had been trying to make a parametric amplifier, using varactor
+diodes and germanium transistor amplifiers. When the bridge started out
+balanced, just a few millivolts of dc input could cause enough imbalance
+to be amplified and then rectified (synchronously) to drive a dc
+amplifier. In theory, you could make an operational amplifier that way.
+But George had worked for many months on an elegant design he called the
+P7. It used 14 germanium transistors, in a little cordwood assembly with
+8 little pc boards packed in between 2 mother boards. He could not get
+good repeatable results, not for dc accuracy or dynamics or temperature
+shift.
+
+Now, Bob Malter was a very pragmatic, hard-headed engineer. You would not
+want to bet him that he could not do something, because he would
+determinedly go out and do it, and prove that he was right—and that you
+were wrong. Bob had his own ideas about how to simplify the P7, down to a
+level that would be practical—which he called the P2. I do not know how
+many false starts and wild experiments Bob made on the P2, but when I
+arrived at Philbrick as a green kid engineer in 1960, Bob was just getting
+the P2 into production.
+
+Instead of George’s 10 pc boards, Bob had put his circuits all on just two
+pc boards that lay back-to-back. Instead of 14 transistors, he had a basic
+circuit of 7 transistors—just one more device than the little 6-transistor
+AM radios of the day. He actually had 2 little transformers—one to do the
+coupling from the 5-MHz oscillator down into the bridge, and one to couple
+out of the balanced bridge into the first of four RF amplifier stages. (If
+you are really interested in the complete schematics of the P2 and P7, and
+other technical comments and details you will want to buy Jim Williams’
+book.*) Note, 25 years ago, these would have been the center of fantastic
+technical espionage; but today, it’s just a matter of historical
+curiosity—industrial archaeology—on an obsolete product. You can’t buy the
+parts to make these amplifiers any more, and even when you could, you
+could build a circuit to follow the schematic, and it wouldn’t work.
+
+So what’s the big deal? Here’s a pretty crude operational amplifier with a
+voltage gain of 10,000, and an output of ±1 mA at ±10 volts, with a
+vicious slew rate of 0.03 volts per microsecond. Who would buy an
+amplifier like that??? It turned out that thousands and THOUSANDS of
+people bought this amplifier, because the input basis current at either
+input was just a few picoamperes. Picoamperes? What the heck is a
+picoampere? Most electronical engineers in 1960 didn’t even know what a
+picofarad was, not to mention a picoampere, but, they figured out it was a
+heck of a small fraction of a microampere. And for many high-impedance
+instrumentation applications, the P2 was clearly the only amplifier you
+could buy that would do the job. And it had this low bias current, only a
+few picoamperes, because all those germanium transistors were running at 5
+Mcps, and their 5 or 10 µA of dc base current had no effect on the
+precision of the input current.
+
+The input current was low, thanks to a well-matched bridge of four V47
+varicaps. These were sold by Pacific Semiconductor Inc. (PSI) for use as
+varactors in parametric amplifiers, up in the hundred of “Megacycles.” The
+“V47” designation meant that they had a nominal capacitance of 47 pF at
+4-V reverse basis, which is where most RF engineers would bias them. But
+Bob Malter biased them right around 0 Vdc, with a miniscule ±60 mV of ac
+drive. At this bias, the capacitance was 110 pF plus 1 pF per 20 mV—not
+an extremely high gain slope.
+
+At this level of drive, each diode would only leak 20 or 40 pA. But Bob
+had a gang of technicians working day and night to match up the forward
+conduction characteristics and the reverse capacitance voltage
+coefficients, and he was able to make sets of 4 varactors that would
+cancel out their off-set drift versus temperature, and also their reverse
+leakage. Of course, there was plenty of experimenting and hacking around,
+but eventually a lot of things worked OK. After all, when you buy 10,000
+V47s, some of them have to match pretty well.
+
+So here’s a little do-hickey, a little circuit made up of just about as
+much parts as a cheap $12 transistor radio, but there was quite a lot of
+demand for this kind of precision. How much demand? Would you believe
+$227 of demand? Yes! The P2 originally started out selling for $185, but
+when the supply/demand situation heated up, it was obvious that at $185,
+the P2 was underpriced. So the price was pushed to $227, to ensure that
+the people who got them were people who really wanted and needed them.
+
+Meanwhile, what other kinds of “transistorized” op amps could you buy?
+Well, by 1963, for $70 to $100, you could buy a 6- or 8-transistor
+amplifier, with Ibias in the ballpark of 60,000 to 150,000 pA, and a
+common-mode range of 11 V. The P2 had a quiet stable input current
+guaranteed less than 100 pA (5 or 10 pA typical), and a common-mode
+range of ±200 V. (After all, with transformer coupling, the actual dec
+level at the balanced bridge could be at any dc level so there was no
+reason the CMRR could not be infinite.)
+
+Wow! A $227 gouge. (You couldn’t call it a “rip-off” because the phrase
+hadn’t been invented, but perhaps that is the only reason….) Obviously,
+this must be a very profitable circuit. Every competitor—and many
+customers—realized that the P2 must cost a rather small amount to build,
+even allowing for a few hours of work for some special grading and
+matching and testing. So, some people would invest their $227 and buy a
+P2 and take it home and pull it apart and try to figure out how it
+worked. The story I heard was that one of our competitors hired a
+bright engineer and handed him a P2 and told him, “Figure out how they
+do this. Figure out how we can do it, too.” In a few days he had
+dismantled the circuit and drawn up the schematic. Then he analyzed it,
+and began experiments to be able to meet or exceed the P2’s
+performance. But he couldn’t get it to work well. He tried every
+approach, but he never could. After a full year, they gave up.
+
+You see, it turns out there was some interaction between the input of
+the first RF amplifier and the output of the 4th amplifier, that made
+the P2 work, when you assembled the two pc boards close together. It
+would not work with any other layout, orientation, or circuit-assembly
+technique. So none of our competitors ever second-sourced the P2. And
+the P2 and P2A and SP2A remained profitable and popular even when the
+new FET-input amplifiers came along at much lower prices. It was years
+later before these costly and complex parametric amplifiers were truly
+and finally obsolete by the inexpensive monolithic Bifet amplifiers
+from National Semiconductor and other IC makers. Even then, the FET
+amplifiers could not compete when your instrument called for an op
+amp with a common-mode range of 50 or 200 V.
+
+Still, it is an amazing piece of history, that the old P2 amplifier
+did so many things right. It manufactured its gain out of thin air,
+when just throwing more transistors at it would probably have done
+more harm than good. And it had low noise, and extremely good input
+current errors—traits that made it a lot of friends. The profits from
+the P2 were big enough to buy Philbrick a whole new building down in
+Dedham, Massachusetts, where Teledyne Philbrick is located to this
+day (notwithstanding a recent name change to Teledyne Components).
+And the men of Philbrick continued to sell those high-priced
+operational amplifiers, and popularized the whole concept of the op
+amp.
+
+Then when good low-cost amplifiers like the UA741 and LM301A came
+along, they were readily accepted by most engineers. Their
+popularity swept right along the path that had been paved by those
+expensive amplifiers from Philbrick. If George Philbrick and Bob
+Malter and Dan Sheingold and Henry Paynter and Bruce Seddon hadn’t
+written all those applications notes and all those books and stores,
+heck, Bob Widlar might not have been able to give his UA709s and
+LM301a away! And the P2—the little junk box made up virtually of
+parts left over from making cheap transistor radios—that was the
+profit engine that enabled and drove and powered the whole
+operational-amplifier industry.
+
+One time, I was standing around in front of the Philbrick booth at
+the big IEEE show in New York City. A couple engineers were hiking
+past the booth, and one said to the other, nodding his head towards
+the booth, “…and there’s the company that makes a big bloody
+profit….” Well, at that time George A. Philbrick Researches was
+indeed making big profits from the P2. We could never deny that.
+Just like Joe and his widgets.
+

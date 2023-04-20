@@ -1,0 +1,62 @@
+1178 doesn't work
+
+
+3. No zoom fit shortcut
+
+Notes:
+  i) Label IN an OUT
+ ii) Rload instead of current sources
+
+1013: A LT1004 model would be nice
+1013D: convergense issue without gmin=1e-10
+1017: delay on power up circuit error
+1043 model is for shit
+1112/1114 model woundn't do fig 1 on datasheet: rail error!
+1113 10Hz Fourth Order Chebyshev Lowpass Filter had 37mdB ripple, not .01dB
+
+1182 LCD VC doesn't start at zero.
+
+Need a model of the 1N5712 for the 1195
+550mV @ 1mA
+
+.model 5082-2800 D(BV=75 Cjo=1.6p EG=0.69 IBV=10E-5 IS=2.2E-9 N=1.08 RS=25 PB=.6 XTI=2 M=.5)
+
+1208 has too much bias current
+
+1213/1214 3Pole Butterworth filters have 1.2 dB peaking
+
+PSspice solves the 1219 when shutdown pin is strobed better than LTspice
+
+1246 model err amp doesn't start at 0
+1265 models have poor latency
+1266 reverses current when bursting and it looks like hell
+1268/B SUPPLIES NO SW DAMPING
+1328 model blows
+1336 model does switch with startup option
+
+1440/1540 Alternate solver required
+
+1494/1495/1496 datasheet 6th filter has schematic errors
+1504 has defcons
+1636 model broken
+1700 model cross conducts
+
+1711/1713 datasheet: Fig 7 has the filter connected to the wrong output
+
+1784 Single Supply Full Wave Rectifier circuit doesn't work
+
+1792 has more than .01dB ripple
+1795 punted
+
+1803/1804/1805 circuit doesn't work very well UNLESS R4 is 10K instead of 1K
+
+1807 shows 1.5dB peaking, not .75dB peaking like in datasheet
+1809 model blows
+1880 datasheet fig 2: extreme case is BS
+1922-1full.asc needs work
+3215 has defcon issues
+
+
+datasheet errors:
+1113 10Hz Fourth Order Chebyshev Lowpass Filter had 37mdB ripple, not .01dB
+1880 datasheet fig 2: extreme case is BS

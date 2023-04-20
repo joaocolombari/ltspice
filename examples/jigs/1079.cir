@@ -1,0 +1,62 @@
+* U:\LTspice\examples\jigs\1079.asc
+V1 +V 0 5
+R1 N006 N005 1Meg
+R2 N005 N003 200K
+V3 IN- IN+ SINE(0 1m 10)
+R3 N002 N001 1Meg
+R4 N004 N006 1Meg
+R5 OUT N002 9.1Meg
+R6 0 N004 9.1Meg
+R7 N003 N001 1Meg
+V2 IN+ 0 SINE(0 1 1)
+R8 IN- N007 20Meg
+R9 IN+ N007 10Meg
+R10 N008 N007 20Meg
+V4 -V 0 -5
+XU1 IN+ N005 +V -V N006 LT1078
+XU2 N004 N002 +V -V OUT LT1078
+XU3 IN- N003 +V -V N001 LT1078
+XU4 IN+ N008 +V -V N007 LT1078
+.tran 1
+
+.subckt LT1078 1 2 3 4 5
+A1 2 1 0 0 0 0 0 0 OTA g=0 in=20f ink=60
+M1 3 N004 5 5 N temp=27
+M2 4 N004 5 5 P temp=27
+C1 N004 0 914f Rpar=1Meg noiseless
+C3 3 5 1p
+C4 5 4 1p
+B1 0 N003 I=10u*dnlim(uplim(V(1),V(3)-1.1,.1), V(4)-0.4, .1)+1n*V(1)
+B2 N003 0 I=10u*dnlim(uplim(V(2),V(3)-1.09,.1), V(4)-0.41, .1)+1n*V(2)
+C6 3 1 .5p Rpar=24G noiseless
+C7 1 4 .5p Rpar=24G noiseless
+C8 2 4 .5p Rpar=24G noiseless
+C9 3 2 .5p Rpar=24G noiseless
+A2 0 N003 0 0 0 0 X 0 OTA g=21u Iout=1.03u Cout=14.6p en=28n enk=.7 Vhigh=1e308 Vlow=-1e308
+C10 N003 0 10f Rpar=100K noiseless
+D2 3 1 DBIAS
+D3 3 2 DBIAS
+D4 X 3 XU
+D5 4 X XD
+D1 N004 5 Y
+D6 5 N004 Y
+G1 0 N004 N009 0 1µ
+G2 0 N008 N007 0 1m
+L1 N008 0 1.68m Rser=1.39k Rpar=3.564102564102564k Cpar=28.01p noiseless
+C11 5 N004 8p noiseless Rser=100k
+G4 0 N009 N008 0 1m
+C12 N009 0 5.15n Rpar=1e3
+G5 0 N007 X 0 1m
+L3 N007 0 2.63m noiseless Rser=1100.833965125099 Rpar=10917.2932330827
+R3 2 1 857Meg noiseless
+D7 3 4 DP
+.model XU D(Ron=1K Roff=100G Vfwd=-.624 epsilon=.3 noiseless)
+.model XD D(Ron=1K Roff=100G Vfwd=-15.3m epsilon=1 noiseless)
+.model Y D(Ron=100K Roff=1T Vfwd=.5 epsilon=1 noiseless)
+.model N VDMOS(Vto=-10m Kp=50m)
+.model P VDMOS(Vto=10m Kp=50m pchan)
+.model DBIAS D(Roff=1T Ron=1k  Vfwd=1 ilimit=6n noiseless)
+.model DP D(Roff=1T Ron=1k Vfwd=0.5 ilimit=35.4u noiseless)
+.ends LT1078
+
+.end

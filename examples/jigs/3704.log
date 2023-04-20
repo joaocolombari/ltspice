@@ -1,0 +1,21 @@
+Circuit: * \\Mac\Home\Documents\LTspice\2019\examples\jigs\3704.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Feb 21 14:02:12 2020
+Total elapsed time: 9.602 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 437113
+traniter = 437106
+tranpoints = 113885
+accept = 85626
+rejected = 28259
+matrix size = 35
+fillins = 3
+solver = Normal
+Matrix Compiler1: 1.49 KB object code size  0.9/0.4/[0.1]
+Matrix Compiler2: 2.33 KB object code size  0.5/0.6/[0.2]
+

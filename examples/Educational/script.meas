@@ -1,0 +1,9 @@
+;.measure TRAN va FIND
+;+ V(a) AT=10m
+;.measure TRAN va FIND V(a) AT 10.8314m
+
+.measure TRAN r FIND V(a) when V(a)=4 rise=last
+
+
+
+

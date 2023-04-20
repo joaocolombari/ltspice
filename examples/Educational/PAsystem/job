@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LIST=`echo *`
+
+for F in $LIST ; do
+   echo "0 .\\examples\\Educational\\PAsystem\\"$F 
+done

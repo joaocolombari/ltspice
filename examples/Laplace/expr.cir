@@ -1,0 +1,10 @@
+* D:\xp\examples\Laplace\expr.asc
+V1 N001 0 AC 1
+R2 N002 0 1.
+;E1 N002 0 N001 0 Laplace=1/(1+s*.000001)
+;E1 N002 0 exper=V() Laplace=1/(1+s*.000001)
+E1 N002 0 Laplace { V(N001) } = { 1/(1+s*.000001) }
+B1 N003 0 V=V(N001) Laplace=1/(1+s*.000001)
+.ac oct 20 1K 100Meg
+.probe
+.end

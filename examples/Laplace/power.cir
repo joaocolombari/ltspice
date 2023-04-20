@@ -1,0 +1,9 @@
+* D:\xp\examples\Laplace\expr.asc
+V1 N001 0 AC 1
+R2 N003 0 1.
+R3 N004 0 1.
+E2 N003 0 Laplace { V(N001) } = { 2**2/(1+1u*s) }
+E3 N004 0 Laplace { V(N001) } = { 2^2/(1+1u*s) }
+.ac oct 20 1K 100Meg
+.probe
+.end

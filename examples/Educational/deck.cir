@@ -1,0 +1,41 @@
+* D:\MoveGND\XVII\examples\Educational\Wien.asc
+v1 +v 0 15
+v2 -v 0 -15
+r1 out n002 10k
+r2 n002 n001 4.9k
+r3 out n004 10k
+r4 0 n003 10k
+c1 n004 n003 .01µ
+c2 n003 0 .01µ
+j§q1 n001 agc 0 u309
+d1 agc out 1n4148
+r5 agc 0 1meg
+c3 0 agc .1µ
+a:u1:1 0 u1:n004 0 0 0 0 u1:x 0 ota g=150u iout=7u cout=28p en=9.8n enk=4 vhigh=1e308 vlow=-1e308
+a:u1:2 n002 n003 0 0 0 0 0 0 ota g=0 in=.1p ink=70
+c:u1:2 u1:n004 0 .75p rpar=100k noiseless
+r:u1:1 +v u1:x 10g noiseless
+r:u1:2 u1:x -v 10g noiseless
+m:u1:1 +v u1:n005 out out u1:n temp=27
+m:u1:2 -v u1:n005 out out u1:p temp=27
+d:u1:1 out u1:x u1:x
+c:u1:3 u1:n005 0 .075p rpar=1meg noiseless
+d:u1:4 n002 n003 u1:di
+c:u1:5 n002 n003 1p rpar=80meg
+c:u1:7 +v out .2p
+c:u1:8 out -v .2p
+b:u1:1 0 u1:n004 i=10u*dnlim(uplim(v(n003),v(+v)-.9,.3), v(-v)+.9, .3)+1n*v(n003)
+b:u1:2 u1:n004 0 i=10u*dnlim(uplim(v(n002),v(+v)-.899,.3), v(-v)+.899, .3)+1n*v(n002)
+b:u1:3 0 u1:n005 i=1u*dnlim(uplim(v(u1:x),v(+v)-.9,.5), v(-v)+.9,.5)+1p*v(u1:x)
+c:u1:9 +v n003 .5p rpar=1.12t noiseless
+c:u1:4 n003 -v .5p rpar=1.12t noiseless
+c:u1:6 n002 -v .5p rpar=1.12t noiseless
+c:u1:10 +v n002 .5p rpar=1.12t noiseless
+.model u309 njf(beta=5.04m betatce=-.5 rd=1 rs=1 lambda=14m vto=-2.026 vtotc=-2.5m is=193.9f isr=1.881p n=1 nr=2 xti=3 alpha=7.533u vk=74.1 cgd=5p m=.4647 pb=1 fc=.5 cgs=5p kf=69.01e-18 af=1 mfg=fairchild)
+.model 1n4148 d(is=2.52n rs=.568 n=1.752 cjo=4p m=.4 tt=20n iave=200m vpk=75 mfg=onsemi type=silicon)
+.model u1:di d(ron=1.15k roff=1g vfwd=1 vrev=1 epsilon=1 revepsilon=1 noiseless)
+.model u1:p vdmos(vto=300m kp=50m pchan)
+.model u1:n vdmos(vto=-300m kp=50m)
+.model u1:x d(ron=10k roff=1t vfwd=.82 vrev=.82 epsilon=.1 revepsilon=.1)
+.tran 0 .5 0 10u startup
+.end

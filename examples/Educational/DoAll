@@ -1,0 +1,88 @@
+#!/bin/sh
+
+LIST="1563.asc
+160.asc
+astable.asc
+audioamp.asc
+BandGaps.asc
+butter.asc
+MeasureBW.asc
+Clapp.asc
+Cohn.asc
+colpits.asc
+colpits2.asc
+curvetrace.asc
+DCopPnt.asc
+dimmer.asc
+Fc.asc
+GFT.asc
+HalfSlope.asc
+Hartly.asc
+Howland.asc
+IdealTransformer.asc
+LM308.asc
+LM741.asc
+LM78XX.asc
+logamp.asc
+LoopGain.asc
+LoopGain2.asc
+MC1648.asc
+MonteCarlo.asc
+NoiseFigure.asc
+NE555.asc
+noise.asc
+notch.asc
+opamp.asc
+P2.asc
+passive.asc
+phaseshift.asc
+phaseshift2.asc
+phono.asc
+Pierce.asc
+PLL.asc
+PLL2.asc
+relax.asc
+Royer.asc
+SampleAndHold.asc
+stepAC.asc
+stepmodelparam.asc
+stepnoise.asc
+steptemp.asc
+S-param.asc
+Transformer.asc
+Transformer2.asc
+TransmissionLineInverter.asc
+TwoTau.asc
+UniversalOpamp2.asc
+varactor.asc
+varactor2.asc
+varistor.asc
+Vswitch.asc
+wavein.asc
+waveout.asc
+Wien.asc
+contrib\elip_grd.asc
+contrib\gr_del.asc
+contrib\qztst.asc"
+
+#LTSPICE="../../scad3.exe"
+LTSPICE="/C/Program Files/LTC/SwCADIII/scad3.exe"
+
+echo /bin/rm -f *.raw *log
+/bin/rm -f *.raw *log
+
+(
+   cd contrib
+   /bin/rm -f *.raw *log
+)
+
+for F in ${LIST} ; do
+   BASE=`echo ${F} | sr ".asc" ""`
+   echo "${LTSPICE}" -netlist ${BASE}.asc
+        "${LTSPICE}" -netlist ${BASE}.asc
+   echo  /bin/mv  ${BASE}.net ${BASE}.cir
+         /bin/mv  ${BASE}.net ${BASE}.cir
+   echo "${LTSPICE}" -b ${BASE}.cir
+        "${LTSPICE}" -b ${BASE}.cir
+   echo 
+done

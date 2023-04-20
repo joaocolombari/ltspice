@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LIST=`echo eg*`
+
+for F in $LIST ; do
+   G=`echo $F | sr eg ""`
+   echo mv $F $G
+   mv $F $G
+done
